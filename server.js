@@ -1,5 +1,5 @@
 import express from "express";
-import HttpError from "./middlware/HttpError.js";
+import HttpError from "./middleware/HttpError.js";
 import ConnectDB from "./config/db.js";
 import userRouter from "./routes/userRoutes.js";
 import dotenv from "dotenv";
