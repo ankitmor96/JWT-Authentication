@@ -65,18 +65,22 @@ const login = async (req, res, next) => {
     }
 };
 
-const authLogin = async (req, res, next) => {
-  try {
-    const user = req.user;
+const authLogin = async (req,res,next)=>{
+    try{
+        const user = req.user;
 
-    if (!user) {
-      return next(new HttpError("unable to login", 401));
+        if(!user){
+            return next(new HttpError("unable to login",404));
+        }
+
+        res.status(200).json({
+            success:true,
+            user
+        });
+    }catch(error){
+        return next (new HttpError(error.message,500));
     }
-
-    res.status(200).json({ success: true, user });
-  } catch (error) {
-    next(new HttpError(error.message, 500));
-  }
 };
+
 
 export default { add, getAllUser, login , authLogin};
