@@ -15,12 +15,11 @@ const add = async (req, res, next) => {
 
         await newUser.save();
 
-        const token = await newUser.generateAuthToken();
+        console.log(newUser);
 
         res.status(201).json({
             success: true,
             message: "new user add successFully",
-            token,
             data: newUser,
         });
     } catch (error) {
@@ -35,6 +34,8 @@ const getAllUser = async (req, res, next) => {
         if (!user) {
             throw new Error("user id not found");
         }
+
+        console.log(user);
 
         res.status(200).json({
             success: true,
@@ -52,35 +53,113 @@ const login = async (req, res, next) => {
 
         const userLogin = await User.findByCredentials(email, password);
 
+        const token = await userLogin.generateAuthToken();
+
         if (!userLogin) {
             next(new HttpError("unable to login",));
         }
 
+        console.log(userLogin);
+
         res.status(200).json({
             success: true,
-            data: userLogin
+            data: userLogin,
+            token
         });
     } catch (error) {
-        next(new HttpError("error.message", 500));
+        next(new HttpError(error.message, 500));
     }
 };
 
-const authLogin = async (req,res,next)=>{
-    try{
+const authLogin = async (req, res, next) => {
+    try {
         const user = req.user;
 
-        if(!user){
-            return next(new HttpError("unable to login",404));
+        if (!user) {
+            return next(new HttpError("unable to login", 404));
         }
+
+        console.log(user);
+
+        res.status(200).json({
+            success: true,
+            user
+        });
+    } catch (error) {
+        return next(new HttpError(error.message, 500));
+    }
+};
+
+const deleteAuth = async (req, res, next) => {
+    try {
+        const user = req.user;
+
+        await user.deleteOne(user);
+
+        console.log(user);
+
+        res.status(200).json({
+            success: true,
+            message: "login user deleted successFully"
+        });
+    } catch (error) {
+        return next(new HttpError("please some problems user not deleted", 500));
+    }
+};
+
+const updateAuth = async (req, res, next) => {
+    try {
+        const user = req.user;
+
+        const updates = Object.keys(req.body);
+
+        const allowedFields = ["name", "password"];
+
+        const isVaildUpdates = updates.every((field) =>
+            allowedFields.includes(field));
+
+        if (!isVaildUpdates) {
+            return next(new HttpError("please allowed fileds is updateds dont any fields", 400));
+        }
+
+        updates.forEach((updates) => {
+            user[updates] = req.body[updates]
+        });
+
+        console.log(updates);
+
+        await user.save();
+
+        res.status(200).json({
+            success: true,
+            message: "allowedField is updated",
+            data: user
+        });
+    } catch (error) {
+        return next(new HttpError("user not updated", 500));
+    }
+};
+
+
+const deleteAllUser = async(req,res,next)=>{
+    try{
+
+        const user = req.user;
+        
+        user.tokens = [];
+
+        await user.save();
+
+        console.log(user);
 
         res.status(200).json({
             success:true,
-            user
+            message: " all users are deleted successFully "
         });
+
     }catch(error){
-        return next (new HttpError(error.message,500));
+        return next (new HttpError(error.messaje,500));
     }
-};
+}
 
-
-export default { add, getAllUser, login , authLogin};
+export default { add, getAllUser, login, authLogin, deleteAuth, updateAuth , deleteAllUser};

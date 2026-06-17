@@ -53,6 +53,8 @@ userSchema.pre("save", async function () {
     if (user.isModified("password")) {
         user.password = await bcrypt.hash(user.password, 8);
     }
+
+    console.log(user.password);
 });
 
 userSchema.statics.findByCredentials = async function (email, password) {
@@ -63,11 +65,16 @@ userSchema.statics.findByCredentials = async function (email, password) {
             throw new Error("unable to login");
         }
 
+        console.log(email);
+
         const isMatched = await bcrypt.compare(password, user.password);
 
         if (!isMatched) {
             throw new Error("unable to login");
         }
+
+        console.log(password);
+
         return user;
 
     } catch (error) {
@@ -91,6 +98,8 @@ userSchema.methods.generateAuthToken = async function () {
         if (!token) {
             throw new Error("failed to auth generate token");
         }
+
+        console.log(token);
 
         user.tokens = user.tokens.concat({ token });
 
