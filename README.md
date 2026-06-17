@@ -198,6 +198,9 @@ Authorization: Bearer JWT_TOKEN
 
 ## Update User Profile
 
+<img width="1918" height="890" alt="Screenshot 2026-06-17 090839" src="https://github.com/user-attachments/assets/42717908-b1fe-4bbc-b55c-5b32c5208b9c" />
+
+
 ### Endpoint
 
 ```http
