@@ -131,7 +131,8 @@ POST /add
 
 User logs in using email and password.
 
-<img width="1918" height="890" alt="Screenshot 2026-06-17 090839" src="https://github.com/user-attachments/assets/5aee4f03-b94d-449f-9757-6508d21545ad" />
+<img width="1915" height="891" alt="Screenshot 2026-06-17 090620" src="https://github.com/user-attachments/assets/4d7308a4-5d46-4df5-8e55-070cbefc395b" />
+
 
 
 ### Endpoint
