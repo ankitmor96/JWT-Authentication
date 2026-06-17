@@ -12,10 +12,10 @@ router.post("/login", userController.login);
 
 router.post("/authLogin", auth , userController.authLogin);
 
-router.delete("/deleteAuth", auth , userController.deleteAuth);
+router.delete("/logout", auth , userController.logout);
 
 router.patch("/updateAuth", auth , userController.updateAuth);
 
-router.delete("/deleteAllUser", auth , userController.deleteAllUser);
+router.delete("/logoutAll", auth , userController.logoutAll);
 
 export default router;
