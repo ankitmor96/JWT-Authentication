@@ -177,7 +177,8 @@ Authorization: Bearer JWT_TOKEN
 
 ## Get Logged In User
 
-<img width="1918" height="890" alt="Screenshot 2026-06-17 090839" src="https://github.com/user-attachments/assets/2a78fe26-2ad9-4ffd-838d-ed105959fc35" />
+<img width="1913" height="901" alt="Screenshot 2026-06-17 090748" src="https://github.com/user-attachments/assets/d59d44ff-52cc-4b23-b7a4-7574cd417708" />
+
 
 
 
