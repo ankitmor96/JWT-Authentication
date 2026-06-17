@@ -247,6 +247,9 @@ Authorization: Bearer JWT_TOKEN
 
 ## Logout From All Devices
 
+<img width="1918" height="893" alt="Screenshot 2026-06-17 091322" src="https://github.com/user-attachments/assets/a51967d5-6627-48de-b514-19910f400f85" />
+
+
 Removes all saved JWT tokens from database.
 
 ### Endpoint
