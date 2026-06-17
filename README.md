@@ -164,6 +164,67 @@ POST /login
 
 ---
 
+## 🗄️ MongoDB Compass Setup
+
+MongoDB Compass is a graphical user interface (GUI) for MongoDB that allows you to view, manage, and analyze your database collections.
+
+### Connect to Local MongoDB
+
+Open MongoDB Compass and enter the following connection string:
+
+```bash
+mongodb://127.0.0.1:27017
+```
+
+Then click **Connect**.
+
+### Database Structure
+
+<img width="1893" height="972" alt="Screenshot 2026-06-17 091118" src="https://github.com/user-attachments/assets/4c2fdbf3-1e28-4517-8fb9-6031a663fd5d" />
+
+
+After running the project, MongoDB will automatically create the following database and collection:
+
+```text
+Database: jwt authentication
+
+Collection: users
+```
+
+### User Document Example
+
+```json
+{
+  "_id": "63a14dd1ba5f026d290309f9",
+  "name": "ankit",
+  "email": "ankit1@gmail.com",
+  "password": "$2b$08$hashedPassword",
+  "tokens": [
+    {
+      "token": "JWT_TOKEN"
+    }
+  ],
+  "createdAt": "2026-06-16T13:21:21.042Z",
+  "updatedAt": "2026-06-16T13:28:53.184Z"
+}
+```
+
+### Verify JWT Token
+
+After successful login, a JWT token is generated and stored inside the `tokens` array.
+
+You can verify the token by:
+
+1. Opening the `users` collection.
+2. Expanding the `tokens` array.
+3. Copying the stored token.
+4. Using it in the Authorization header of protected routes.
+
+```http
+Authorization: Bearer YOUR_JWT_TOKEN
+```
+
+
 # 🔒 Protected Routes
 
 Protected routes require JWT Token in Authorization Header.
