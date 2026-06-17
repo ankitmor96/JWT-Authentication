@@ -177,7 +177,8 @@ Authorization: Bearer JWT_TOKEN
 
 ## Get Logged In User
 
-![Uploading Screenshot 2026-06-17 090748.png…]()
+<img width="1918" height="890" alt="Screenshot 2026-06-17 090839" src="https://github.com/user-attachments/assets/2a78fe26-2ad9-4ffd-838d-ed105959fc35" />
+
 
 
 ### Endpoint
