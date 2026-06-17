@@ -228,6 +228,9 @@ or
 
 ## Delete Logged In User
 
+<img width="1906" height="890" alt="Screenshot 2026-06-17 091015" src="https://github.com/user-attachments/assets/99461ddf-9f6d-4cd7-a3e8-ff5867cbe288" />
+
+
 ### Endpoint
 
 ```http
