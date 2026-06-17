@@ -177,6 +177,9 @@ Authorization: Bearer JWT_TOKEN
 
 ## Get Logged In User
 
+![Uploading Screenshot 2026-06-17 090748.png…]()
+
+
 ### Endpoint
 
 ```http
