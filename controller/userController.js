@@ -90,7 +90,7 @@ const authLogin = async (req, res, next) => {
     }
 };
 
-const deleteAuth = async (req, res, next) => {
+const logout = async (req, res, next) => {
     try {
         const user = req.user;
 
@@ -141,7 +141,7 @@ const updateAuth = async (req, res, next) => {
 };
 
 
-const deleteAllUser = async(req,res,next)=>{
+const logoutAll = async(req,res,next)=>{
     try{
 
         const user = req.user;
@@ -162,4 +162,4 @@ const deleteAllUser = async(req,res,next)=>{
     }
 }
 
-export default { add, getAllUser, login, authLogin, deleteAuth, updateAuth , deleteAllUser};
+export default { add, getAllUser, login, authLogin, logout, updateAuth , logoutAll};
