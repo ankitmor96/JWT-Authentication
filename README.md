@@ -84,9 +84,6 @@ npm install
 Create `.env` file in root directory.
 
 ```env
-PORT=5000
-MONGODB_URL=mongodb://localhost:27017/jwt-auth
-JWT_SECRET=your_secret_key
 ```
 
 ### Start Server
@@ -108,6 +105,9 @@ npm run dev
 ## Register User
 
 User creates a new account.
+
+<img width="1917" height="896" alt="Screenshot 2026-06-17 090548" src="https://github.com/user-attachments/assets/b34a7482-5bc3-45be-bd38-adfae22325cb" />
+
 
 ### Endpoint
 
