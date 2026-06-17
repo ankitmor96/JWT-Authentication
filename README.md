@@ -270,6 +270,9 @@ Authorization: Bearer JWT_TOKEN
 
 ### Password Hashing
 
+<img width="952" height="385" alt="Screenshot 2026-06-17 093329" src="https://github.com/user-attachments/assets/99e58160-d680-46a3-bd2a-fbb6de5350d8" />
+
+
 Passwords are hashed using Bcrypt before saving to database.
 
 ```javascript
